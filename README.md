@@ -32,13 +32,6 @@ Web框架：Play for Scala
 
 #### 后续优化和迭代计划
 
-- 起初采用的是自增int主键，正好发挥postgreSQL自带的SEQUENCE自增优势，但是因为隐式转换json.Format这里运用不熟练，导致前端发过来的json主键并没有转成int，导致与案例类匹配不上，即
-
-  ```scala
-  {"empId":”1“,"empName":"张三","gender":"男","email":"1@qq.com"} 与
-  case class Employee(empId: Int, empName: String, gender: String, email: String)映射失败
-  ```
-
 - 尝试Slick层用Plain SQL重构
 
 - 尝试使用基于 「Scala 宏」的依赖注入框架[macwire](https://github.com/adamw/macwire) 管理注入，提高效率
